@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ProductController::class, 'index'])->name('product.index');
@@ -20,4 +21,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/product/create', [ProductController::class, 'create'])->name('product.create');
     Route::post('/product/create', [ProductController::class, 'store'])->name('product.store');
     Route::get('/product/buy/{id}', [ProductController::class, 'buy'])->name('product.buy');
+
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
+    Route::post('/profile/withdraw', [ProfileController::class, 'withdraw'])->name('profile.withdraw');
 });
