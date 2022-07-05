@@ -68,9 +68,11 @@
       </div>
     </div>
     <div class="row mt-4">
-      <div class="col-12">
+      <div class="col-6">
         <div class="card">
           <div class="card-body p-3">
+            <h5>Student</h5>
+            <hr>
             <table class="table align-items-center mb-0">
               <thead>
                 <tr>
@@ -91,6 +93,43 @@
                     </td>
                     <td>
                       Rp. {{ number_format($student->saldo, 0, '.', '.') }}
+                    </td>
+                  </tr>
+                @endforeach
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="card">
+          <div class="card-body p-3">
+            <h5>Withdraw History</h5>
+            <hr>
+            <table class="table align-items-center mb-0">
+              <thead>
+                <tr>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Student</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Amount</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                @foreach($withdraw_history as $item)
+                  <tr>
+                    <td>
+                      <div class="d-flex px-2 py-1">
+                        <div class="d-flex flex-column justify-content-center">
+                          <h6 class="mb-0 text-sm">{{ $item->student->name }}</h6>
+                          <p class="text-xs text-secondary mb-0">{{ $item->student->email }}</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      Rp. {{ number_format($item->amount, 0, '.', '.') }}
+                    </td>
+                    <td>
+                      {{ $item->created_at }}
                     </td>
                   </tr>
                 @endforeach

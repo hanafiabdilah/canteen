@@ -37,6 +37,7 @@
               <div class="form-group">
                 <label for="jumlah" class="form-control-label">Jumlah</label>
                 <input type="number" name="jumlah" class="form-control" id="jumlah" required>
+                <small>*Minimal Rp. 1000</small>
               </div>
               <div class="form-group">
                 <button class="btn btn-primary">Tarik</button>
