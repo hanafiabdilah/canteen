@@ -21,7 +21,7 @@
                 </div>
                 <div class="col-4 text-end">
                   @if($product->sold)
-                    <span class="btn bg-gradient-primary">Terjual</span>
+                    <span class="btn bg-gradient-danger">Sold</span>
                   @else
                     <span class="btn bg-gradient-success">Aktif</span>
                   @endif

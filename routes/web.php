@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BalanceBoxController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -17,6 +18,8 @@ Route::group(['middleware' => 'auth'], function(){
     Route::post('/product/create', [ProductController::class, 'store'])->name('product.store');
     Route::get('/product/buy/{id}', [ProductController::class, 'buy'])->name('product.buy');
     Route::get('/product/my', [ProductController::class, 'my'])->name('product.my');
+
+    Route::get('/balance-box', [BalanceBoxController::class, 'index'])->name('balance.box.index');
 
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
     Route::post('/profile/withdraw', [ProfileController::class, 'withdraw'])->name('profile.withdraw');
