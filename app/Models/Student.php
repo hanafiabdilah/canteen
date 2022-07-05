@@ -9,4 +9,6 @@ use Illuminate\Database\Eloquent\Model;
 class Student extends Authenticatable
 {
     use HasFactory;
+
+    protected $fillable = ['saldo'];
 }

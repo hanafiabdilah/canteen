@@ -32,7 +32,7 @@
                   </div>
                 </div>
                 <div class="col-4 text-end">
-                  <a href="" class="btn bg-gradient-primary">Beli</a>
+                  <a href="{{ route('product.buy', $product->id) }}" class="btn bg-gradient-primary">Beli</a>
                 </div>
               </div>
             </div>

@@ -9,5 +9,9 @@ class Product extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'image', 'description', 'price', 'student_id'];
+    protected $fillable = ['name', 'image', 'description', 'price', 'sold', 'student_id'];
+
+    public function seller(){
+        return $this->belongsTo(Student::class, 'student_id');
+    }
 }
