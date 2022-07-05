@@ -14,5 +14,6 @@ Route::group(['middleware' => 'auth'], function(){
         return view('pages.dashboard');
     });
     Route::get('/products', [ProductController::class, 'index'])->name('product.index');
-    Route::post('/product', [ProductController::class, 'store'])->name('product.store');
+    Route::get('/product/create', [ProductController::class, 'create'])->name('product.create');
+    Route::post('/product/create', [ProductController::class, 'store'])->name('product.store');
 });
