@@ -65,4 +65,9 @@ class ProductController extends Controller
 
         return back()->with('success', 'Selamat, Produk berhasil dibeli');
     }
+
+    public function sold(){
+        $products = Product::where('sold', true)->orderBy('updated_at', 'DESC')->get();
+        return view('pages.product_sold', compact('products'));
+    }
 }
