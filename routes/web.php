@@ -10,6 +10,9 @@ Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::group(['middleware' => 'auth'], function(){
+    Route::get('/dashboard', function(){
+        return view('pages.dashboard');
+    });
     Route::get('/products', [ProductController::class, 'index'])->name('product.index');
     Route::post('/product', [ProductController::class, 'store'])->name('product.store');
 });
