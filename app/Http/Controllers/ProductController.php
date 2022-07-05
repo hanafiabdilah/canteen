@@ -8,8 +8,15 @@ use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
-    public function index(){
-        return view('pages.products');
+    public function index(Request $request){
+        if($request->sort == 'asc'){
+            $products = Product::orderBy('name', 'ASC')->get();
+        }else if($request->sort == 'desc'){
+            $products = Product::orderBy('name', 'DESC')->get();
+        }else{
+            $products = Product::orderBy('created_at', 'DESC')->get();
+        }
+        return view('pages.products', compact('products'));
     }
 
     public function create(){
@@ -29,6 +36,6 @@ class ProductController extends Controller
             'student_id' => Auth::user()->id,
         ]);
 
-        return back()->with('success', 'Product Created');
+        return back()->with('success', 'Selamat, product anda berhasil dibuat. Tunggu hingga product anda terjual');
     }
 }
