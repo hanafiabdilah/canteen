@@ -19,12 +19,16 @@ class AuthController extends Controller
             'email' => $request->email,
             'password' => $request->password
         ];
-        Auth::attempt($credentials);
-
-        return redirect()->route('product.index');
+        if(Auth::attempt($credentials)){
+            return redirect()->route('product.index');
+        }
+        return back()->with('error', 'Email atau Password salah');
     }
 
     public function register(){
+        if(Auth::check()){
+            return redirect()->route('product.index');
+        }
         return view('auth.register');
     }
 
