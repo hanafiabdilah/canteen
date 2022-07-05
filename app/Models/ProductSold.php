@@ -12,4 +12,12 @@ class ProductSold extends Model
     protected $table = 'product_sold';
 
     protected $fillable = ['product_id', 'buyer_id'];
+
+    public function detail(){
+        return $this->belongsTo(Product::class, 'product_id');
+    }
+
+    public function buyer(){
+        return $this->belongsTo(Student::class, 'buyer_id');
+    }
 }
