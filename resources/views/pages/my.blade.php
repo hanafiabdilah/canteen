@@ -2,20 +2,8 @@
 @section('content')
   <div class="container-fluid py-4">
     <div class="row">
-      <div class="col-md-4">
-        <div class="d-flex align-items-center justify-content-around">
-          <p class="mb-0">Sort By</p>
-          <select class="form-control w-75" id="sortBy">
-            <option value=""  {{ request()->sort == '' ? 'selected' : '' }}>Latest</option>
-            <option value="asc" {{ request()->sort == 'asc' ? 'selected' : '' }}>Ascending</option>
-            <option value="desc" {{ request()->sort == 'desc' ? 'selected' : '' }}>Descending</option>
-          </select>
-        </div>
-      </div>
-    </div>
-    <div class="row mt-4">
       @foreach($products as $product)
-        <div class="col-xl-3 col-sm- mb-4">
+        <div class="col-xl-3 col-sm-6 mb-4">
           <div class="card">
             <div class="card-header text-center">
               <img src="{{ asset('assets/img/products') }}/{{ $product->image }}" style="height: 150px; width: 100%; object-fit: contain;">
@@ -32,10 +20,10 @@
                   </div>
                 </div>
                 <div class="col-4 text-end">
-                  @if(!$product->sold)
-                    <a href="{{ route('product.buy', $product->id) }}" class="btn bg-gradient-primary">Beli</a>
+                  @if($product->sold)
+                    <span class="btn bg-gradient-primary">Terjual</span>
                   @else
-                    <span class="btn bg-gradient-danger">Sold</span>
+                    <span class="btn bg-gradient-success">Aktif</span>
                   @endif
                 </div>
               </div>

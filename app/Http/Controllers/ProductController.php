@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class ProductController extends Controller
 {
     public function index(Request $request){
-        $products = Product::where('sold', false);
+        $products = Product::orderBy('sold', 'ASC');
 
         if($request->sort == 'asc'){
             $products = $products->orderBy('name', 'ASC')->get();
@@ -66,8 +66,8 @@ class ProductController extends Controller
         return back()->with('success', 'Selamat, Produk berhasil dibeli');
     }
 
-    public function sold(){
-        $products = ProductSold::orderBy('created_at', 'DESC')->get();
-        return view('pages.product_sold', compact('products'));
+    public function my(){
+        $products = Product::where('student_id', Auth::user()->id)->orderBy('sold', 'asc')->get();
+        return view('pages.my', compact('products'));
     }
 }

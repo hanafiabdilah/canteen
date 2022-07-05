@@ -13,14 +13,10 @@ Route::post('/register', [AuthController::class, 'postRegister'])->name('registe
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::group(['middleware' => 'auth'], function(){
-    Route::get('/dashboard', function(){
-        return view('pages.dashboard');
-    });
-
-    Route::get('/product/sold', [ProductController::class, 'sold'])->name('product.sold');
     Route::get('/product/create', [ProductController::class, 'create'])->name('product.create');
     Route::post('/product/create', [ProductController::class, 'store'])->name('product.store');
     Route::get('/product/buy/{id}', [ProductController::class, 'buy'])->name('product.buy');
+    Route::get('/product/my', [ProductController::class, 'my'])->name('product.my');
 
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
     Route::post('/profile/withdraw', [ProfileController::class, 'withdraw'])->name('profile.withdraw');
