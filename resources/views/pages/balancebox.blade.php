@@ -3,7 +3,7 @@
 @section('content')
   <div class="container-fluid py-4">
     <div class="row">
-      <div class="col-3">
+      <div class="col-lg-3 mt-3 mt-lg-0">
         <div class="card">
             <div class="card-body p-3">
               <div class="row">
@@ -24,7 +24,7 @@
             </div>
           </div>
       </div>
-      <div class="col-3">
+      <div class="col-lg-3 mt-3 mt-lg-0">
         <div class="card">
             <div class="card-body p-3">
               <div class="row">
@@ -45,7 +45,7 @@
             </div>
           </div>
       </div>
-      <div class="col-3">
+      <div class="col-lg-3 mt-3 mt-lg-0">
         <div class="card">
             <div class="card-body p-3">
               <div class="row">
@@ -68,7 +68,7 @@
       </div>
     </div>
     <div class="row mt-4">
-      <div class="col-6">
+      <div class="col-lg-6">
         <div class="card">
           <div class="card-body p-3">
             <h5>Student</h5>
@@ -101,7 +101,7 @@
           </div>
         </div>
       </div>
-      <div class="col-6">
+      <div class="col-lg-6 mt-3 mt-lg-0">
         <div class="card">
           <div class="card-body p-3">
             <h5>Withdraw History</h5>

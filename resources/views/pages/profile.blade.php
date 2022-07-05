@@ -5,10 +5,9 @@
     <div class="row">
       <div class="col-12 col-lg-6">
         <div class="card">
-          <div class="card-header">
-            <h4>Profile Detail</h4>
-          </div>
           <div class="card-body p-3">
+            <h5>Profile Detail</h5>
+            <hr>
             <div class="form-group">
               <label class="form-control-label">Name</label>
               <input name="name" class="form-control" value="{{ Auth::user()->name }}" disabled>
@@ -22,16 +21,15 @@
       </div>
       <div class="col-12 col-lg-6 mt-3 mt-lg-0">
         <div class="card">
-          <div class="card-header">
-            <h4>Saldo</h4>
-          </div>
           <div class="card-body p-3">
+            <h5>Saldo</h5>
+            <hr>
             <div class="form-group">
               <label class="form-control-label">Total Saldo</label>
               <input class="form-control" value="{{ Auth::user()->saldo }}" disabled>
             </div>
             <hr>
-            <h5>Tarik Saldo</h5>
+            <h6>Tarik Saldo</h6>
             <form action="{{ route('profile.withdraw') }}" method="POST">
               @csrf
               <div class="form-group">
