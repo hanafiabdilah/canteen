@@ -5,10 +5,14 @@
       </div>
       <ul class="navbar-nav  justify-content-end">
         <li class="nav-item d-flex align-items-center">
-          <i class="fa fa-user me-sm-1"></i>
-          <span class="">{{ Auth::user()->name }}</span>
-          <span class="mx-2"></span>
-          <span class="d-sm-inline d-none"><a href="{{ route('logout') }}" class="btn btn-sm btn-danger mb-0">Logout</a></span>
+          @if(Auth::check())
+            <i class="fa fa-user me-sm-1"></i>  
+            <span class="">{{ Auth::user()->name }}</span>
+            <span class="mx-2"></span>
+            <span class="d-sm-inline d-none"><a href="{{ route('logout') }}" class="btn btn-sm btn-danger mb-0">Logout</a></span>
+          @else
+            <span class="d-sm-inline d-none"><a href="{{ route('login') }}" class="btn btn-sm btn-primary mb-0">Login</a></span>
+          @endif
         </li>
         <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
           <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
