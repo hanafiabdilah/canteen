@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -30,6 +32,20 @@ class AuthController extends Controller
             return redirect()->route('product.index');
         }
         return view('auth.register');
+    }
+
+    public function postRegister(Request $request){
+        $students = Student::where('email', $request->email)->first();
+        if($students){
+            return back()->with('error', 'Email sudah digunakan');
+        } 
+
+        Student::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password)
+        ]);
+        return redirect()->route('login')->with('success', 'Selamat, akun anda sudah bisa digunakan! Silahkan Login');
     }
 
     public function logout(){

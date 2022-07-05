@@ -7,8 +7,7 @@
         <li class="nav-item d-flex align-items-center">
           @if(Auth::check())
             <i class="fa fa-user me-sm-1"></i>  
-            <span class="">{{ Auth::user()->name }}</span>
-            <span class="mx-2"></span>
+            <span class="me-md-3 ms-2 ms-md-1">{{ Auth::user()->name }}</span>
             <span class="d-sm-inline d-none"><a href="{{ route('logout') }}" class="btn btn-sm btn-danger mb-0">Logout</a></span>
           @else
             <span class="d-sm-inline d-none"><a href="{{ route('login') }}" class="btn btn-sm btn-primary mb-0">Login</a></span>

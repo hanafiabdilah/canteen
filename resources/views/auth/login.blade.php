@@ -44,6 +44,11 @@
           <div class="row">
             <div class="col-xl-4 col-lg-5 col-md-6 d-flex flex-column mx-auto">
               <div class="card card-plain mt-8">
+                @if(session('success'))
+                <div class="alert alert-success" role="alert">
+                  {{ session('success') }}
+                </div>
+                @endif
                 @if(session('error'))
                 <div class="alert alert-danger text-light" role="alert">
                   {{ session('error') }}
