@@ -41,6 +41,28 @@
                 <button class="btn btn-primary">Tarik</button>
               </div>
             </form>
+            <hr>
+            <h6>Withdraw History</h6>
+            <table class="table align-items-center mb-0">
+              <thead>
+                <tr>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Amount</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                @foreach(Auth::user()->withdraw_history as $item)
+                  <tr>
+                    <td>
+                      Rp. {{ number_format($item->amount, 0, '.', '.') }}
+                    </td>
+                    <td>
+                      {{ $item->created_at }}
+                    </td>
+                  </tr>
+                @endforeach
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
