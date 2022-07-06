@@ -20,7 +20,7 @@
                     <tr>
                       <td>
                         <div class="d-flex align-items-center">
-                          <img src="{{ asset('assets/img/products') }}/{{ $product->detail->image }}" style="height: 50px; width: auto"/>
+                          <img src="{{ asset('assets/img/products') }}/{{ $product->detail->image }}" style="height: 50px; width: 50px; object-fit: contain"/>
                           <div class="ms-2">
                             <h6 class="mb-0 text-sm text-primary">Rp. {{ number_format($product->detail->price, 0, '.', '.') }}</h6>
                             <h6 class="mb-0 text-sm">{{ $product->detail->name }}</h6>
