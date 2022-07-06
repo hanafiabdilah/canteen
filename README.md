@@ -12,6 +12,7 @@ The kantin Digital is a digital-based canteen system.
 -   Run "composer install"
 -   Create database on MySQL
 -   Change the contents of DB_DATABASE with the name of the database you just created
+-   Run "php artisan migrate"
 -   Run "php artisan serve"
 
 ## Feature
