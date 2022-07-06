@@ -14,15 +14,19 @@ Route::post('/register', [AuthController::class, 'postRegister'])->name('registe
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::group(['middleware' => 'auth'], function(){
-    Route::get('/product/create', [ProductController::class, 'create'])->name('product.create');
-    Route::post('/product/create', [ProductController::class, 'store'])->name('product.store');
-    Route::get('/product/buy/{id}', [ProductController::class, 'buy'])->name('product.buy');
-    Route::get('/product/my', [ProductController::class, 'my'])->name('product.my');
+    Route::group(['prefix' => 'product', 'as' => 'product.'], function(){
+        Route::get('/create', [ProductController::class, 'create'])->name('create');
+        Route::post('/create', [ProductController::class, 'store'])->name('store');
+        Route::get('/buy/{id}', [ProductController::class, 'buy'])->name('buy');
+        Route::get('/my', [ProductController::class, 'my'])->name('my');
+    });
+
+    Route::group(['prefix' => 'profile', 'as' => 'profile.'], function(){
+        Route::get('/', [ProfileController::class, 'index'])->name('index');
+        Route::get('/purchase', [ProfileController::class, 'purchase'])->name('purchase');
+        Route::get('/sale', [ProfileController::class, 'sale'])->name('sale');
+        Route::post('/withdraw', [ProfileController::class, 'withdraw'])->name('withdraw');
+    });
 
     Route::get('/balance-box', [BalanceBoxController::class, 'index'])->name('balance.box.index');
-
-    Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
-    Route::get('/profile/purchase', [ProfileController::class, 'purchase'])->name('profile.purchase');
-    Route::get('/profile/sale', [ProfileController::class, 'sale'])->name('profile.sale');
-    Route::post('/profile/withdraw', [ProfileController::class, 'withdraw'])->name('profile.withdraw');
 });
