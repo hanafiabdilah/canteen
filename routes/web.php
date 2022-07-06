@@ -22,5 +22,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/balance-box', [BalanceBoxController::class, 'index'])->name('balance.box.index');
 
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
+    Route::get('/profile/purchase', [ProfileController::class, 'purchase'])->name('profile.purchase');
+    Route::get('/profile/sale', [ProfileController::class, 'sale'])->name('profile.sale');
     Route::post('/profile/withdraw', [ProfileController::class, 'withdraw'])->name('profile.withdraw');
 });

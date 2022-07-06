@@ -15,4 +15,12 @@ class Student extends Authenticatable
     public function withdraw_history(){
         return $this->hasMany(WithdrawHistory::class, 'student_id');
     }
+
+    public function purchases(){
+        return $this->hasMany(ProductSold::class, 'buyer_id')->orderBy('created_at', 'DESC');
+    }
+
+    public function sales(){
+        return $this->hasMany(Product::class, 'student_id')->where('sold', true)->orderBy('updated_at', 'DESC');
+    }
 }

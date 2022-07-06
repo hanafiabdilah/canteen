@@ -14,4 +14,8 @@ class Product extends Model
     public function seller(){
         return $this->belongsTo(Student::class, 'student_id');
     }
+
+    public function buyer(){
+        return $this->hasOne(ProductSold::class, 'product_id');
+    }
 }

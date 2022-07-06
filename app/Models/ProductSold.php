@@ -17,10 +17,6 @@ class ProductSold extends Model
         return $this->belongsTo(Product::class, 'product_id');
     }
 
-    public function products(){
-        return $this->hasMany(Product::class);
-    }
-
     public function buyer(){
         return $this->belongsTo(Student::class, 'buyer_id');
     }
