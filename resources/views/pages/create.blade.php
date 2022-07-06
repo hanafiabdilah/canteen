@@ -25,6 +25,7 @@
               <div class="form-group">
                 <label for="price" class="form-control-label">Price</label>
                 <input type="number" name="price" class="form-control" id="price" required>
+                <small>* Minimal Rp. 1000</small>
               </div>
               <div class="form-group">
                 <button class="btn btn-primary">Add</button>

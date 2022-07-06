@@ -27,6 +27,10 @@ class ProductController extends Controller
     }
 
     public function store(Request $request){
+        if($request->price < 1000){
+            return back()->with('error', 'Harga minimal adalah Rp. 1000');
+        }
+        
         $file = $request->file('image');
         $fileName = 'product_' . time() . '.' . $file->extension();
         $file->move(public_path('assets/img/products'), $fileName);

@@ -77,7 +77,7 @@ class AuthController extends Controller
 
         Auth::attempt($credentials);
         
-        return redirect()->route('profile.index')->with('success', 'Selamat, akun anda sudah bisa digunakan! Setelah keluar, Login menggunakan User ID');
+        return redirect()->route('profile.index')->with('success', 'Selamat, akun anda sudah bisa digunakan! Setelah keluar, Login menggunakan User ID dan Password');
     }
 
     public function logout(){
