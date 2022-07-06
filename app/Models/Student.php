@@ -10,7 +10,7 @@ class Student extends Authenticatable
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'email', 'password', 'saldo'];
+    protected $fillable = ['user_id', 'name', 'email', 'password', 'saldo'];
 
     public function withdraw_history(){
         return $this->hasMany(WithdrawHistory::class, 'student_id');

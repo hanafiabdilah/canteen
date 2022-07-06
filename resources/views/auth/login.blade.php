@@ -61,9 +61,9 @@
                 <div class="card-body">
                   <form action="{{ route('login') }}" method="POST">
                     @csrf
-                    <label>Email</label>
+                    <label>User ID</label>
                     <div class="mb-3">
-                      <input type="email" name="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="email-addon">
+                      <input type="number" name="user_id" class="form-control" placeholder="User ID" aria-label="User ID" aria-describedby="user-id-addon">
                     </div>
                     <label>Password</label>
                     <div class="mb-3">

@@ -9,6 +9,10 @@
             <h5>Profile Detail</h5>
             <hr>
             <div class="form-group">
+              <label class="form-control-label">User ID</label>
+              <input name="user_id" class="form-control" value="{{ Auth::user()->user_id }}" disabled>
+            </div>
+            <div class="form-group">
               <label class="form-control-label">Name</label>
               <input name="name" class="form-control" value="{{ Auth::user()->name }}" disabled>
             </div>
