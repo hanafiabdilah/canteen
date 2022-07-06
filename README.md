@@ -1,6 +1,18 @@
+![alt text](https://github.com/hanafiabdilah/canteen/blob/master/public/assets/img/readme/product_list.png?raw=true)
+![alt text](https://github.com/hanafiabdilah/canteen/blob/master/public/assets/img/readme/balance_box.png?raw=true)
+
 ## Description
 
 The kantin Digital is a digital-based canteen system.
+
+## How to Run ?
+
+-   Clone this project
+-   Rename or copy ".env.example" file to ".env"
+-   Run "composer install"
+-   Create database on MySQL
+-   Change the contents of DB_DATABASE with the name of the database you just created
+-   Run "php artisan serve"
 
 ## Feature
 
@@ -50,15 +62,6 @@ The kantin Digital is a digital-based canteen system.
 -   Sale
 
     Halaman ini adalah halaman history penjualan siswa, ketika ada siswa lain yang membeli produk maka akan ditampilkan ditable yang ada dihalaman ini
-
-## How to Run ?
-
--   Clone this project
--   Rename or copy ".env.example" file to ".env"
--   Run "composer install"
--   Create database on MySQL
--   Change the contents of DB_DATABASE with the name of the database you just created
--   Run "php artisan serve"
 
 ## License
 
